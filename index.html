@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Build a Plate</title>
+  <meta name="description" content="A browser-based 3D nutrition-training activity: build a plate, watch the macros, check it against a scenario." />
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <main id="app">
+    <div id="canvas-wrap">
+      <canvas id="scene"></canvas>
+      <div id="tooltip" hidden></div>
+    </div>
+
+    <aside id="panel">
+      <h1>Build a Plate</h1>
+      <p class="hint">Click foods to add them to the plate. Click a food on the plate to remove it.</p>
+
+      <section>
+        <h2>Scenario</h2>
+        <div id="scenarios" class="chips"></div>
+        <p id="brief" class="brief"></p>
+      </section>
+
+      <section>
+        <h2>Totals</h2>
+        <p id="calories">Calories: 0 kcal</p>
+        <p id="note" class="note" aria-live="polite"></p>
+      </section>
+
+      <section>
+        <h2>Macros</h2>
+        <div class="macro">
+          <span class="macro-label">Protein</span>
+          <div class="bar"><div id="bar-protein" class="fill protein"></div></div>
+          <span id="pct-protein" class="pct">0%</span>
+        </div>
+        <div class="macro">
+          <span class="macro-label">Carbs</span>
+          <div class="bar"><div id="bar-carbs" class="fill carbs"></div></div>
+          <span id="pct-carbs" class="pct">0%</span>
+        </div>
+        <div class="macro">
+          <span class="macro-label">Fat</span>
+          <div class="bar"><div id="bar-fat" class="fill fat"></div></div>
+          <span id="pct-fat" class="pct">0%</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>On the plate</h2>
+        <ul id="items" class="items"><li class="empty">Nothing yet</li></ul>
+      </section>
+
+      <section>
+        <button id="check" type="button">Check my plate</button>
+        <div id="feedback" class="feedback" aria-live="polite"></div>
+        <p class="disclaimer">Simplified rules for demonstration; not dietary advice.</p>
+      </section>
+
+      <section>
+        <button id="reset" type="button" class="secondary">Reset</button>
+      </section>
+    </aside>
+  </main>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

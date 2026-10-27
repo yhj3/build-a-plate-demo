@@ -1,0 +1,104 @@
+[
+  {
+    "id": "apple",
+    "label": "Apple",
+    "shape": "sphere",
+    "color": "#d93b3b",
+    "size": 0.35,
+    "group": "fruit",
+    "kcal": 95,
+    "protein_g": 0.5,
+    "carbs_g": 25,
+    "fat_g": 0.3
+  },
+  {
+    "id": "broccoli",
+    "label": "Broccoli",
+    "shape": "cone",
+    "color": "#3f8f3a",
+    "size": 0.35,
+    "group": "vegetable",
+    "kcal": 55,
+    "protein_g": 4,
+    "carbs_g": 11,
+    "fat_g": 0.6
+  },
+  {
+    "id": "carrot",
+    "label": "Carrot",
+    "shape": "cylinder",
+    "color": "#e8812a",
+    "size": 0.32,
+    "group": "vegetable",
+    "kcal": 50,
+    "protein_g": 1,
+    "carbs_g": 12,
+    "fat_g": 0.3,
+    "lying": true
+  },
+  {
+    "id": "chicken",
+    "label": "Grilled chicken",
+    "shape": "box",
+    "color": "#c48a5a",
+    "size": 0.32,
+    "group": "protein",
+    "kcal": 165,
+    "protein_g": 31,
+    "carbs_g": 0,
+    "fat_g": 3.6
+  },
+  {
+    "id": "egg",
+    "label": "Egg",
+    "shape": "sphere",
+    "color": "#f3ead6",
+    "size": 0.26,
+    "group": "protein",
+    "kcal": 78,
+    "protein_g": 6,
+    "carbs_g": 0.6,
+    "fat_g": 5,
+    "scale": [
+      1,
+      1.3,
+      1
+    ]
+  },
+  {
+    "id": "rice",
+    "label": "Brown rice",
+    "shape": "box",
+    "color": "#b58a4c",
+    "size": 0.32,
+    "group": "grain",
+    "kcal": 215,
+    "protein_g": 5,
+    "carbs_g": 45,
+    "fat_g": 1.8
+  },
+  {
+    "id": "cheese",
+    "label": "Cheese",
+    "shape": "wedge",
+    "color": "#f2c230",
+    "size": 0.26,
+    "group": "dairy",
+    "kcal": 115,
+    "protein_g": 7,
+    "carbs_g": 0.4,
+    "fat_g": 9
+  },
+  {
+    "id": "donut",
+    "label": "Donut",
+    "shape": "torus",
+    "color": "#d98cb3",
+    "size": 0.3,
+    "group": "treat",
+    "kcal": 250,
+    "protein_g": 4,
+    "carbs_g": 31,
+    "fat_g": 12
+  }
+]

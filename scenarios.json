@@ -1,0 +1,41 @@
+[
+  {
+    "id": "free",
+    "title": "Free build",
+    "brief": "No target. Build any plate and check it against the general guidelines.",
+    "goals": []
+  },
+  {
+    "id": "diabetes",
+    "title": "Type 2 diabetes lunch",
+    "brief": "A client managing type 2 diabetes wants a lunch that keeps carbohydrates moderate and skips the sweets.",
+    "goals": [
+      { "metric": "count_vegetable", "op": ">=", "value": 2, "label": "At least two vegetable servings" },
+      { "metric": "pct_carbs", "op": "<=", "value": 45, "label": "Carbs at most 45% of calories" },
+      { "metric": "count_treat", "op": "==", "value": 0, "label": "No treats" },
+      { "metric": "kcal", "op": "<=", "value": 700, "label": "Under 700 kcal" }
+    ]
+  },
+  {
+    "id": "recovery",
+    "title": "Post-workout recovery",
+    "brief": "An athlete coming off a training session needs plenty of protein without a huge calorie load.",
+    "goals": [
+      { "metric": "pct_protein", "op": ">=", "value": 30, "label": "Protein at least 30% of calories" },
+      { "metric": "kcal", "op": "<=", "value": 800, "label": "Under 800 kcal" },
+      { "metric": "count_vegetable", "op": ">=", "value": 1, "label": "At least one vegetable" }
+    ]
+  },
+  {
+    "id": "myplate",
+    "title": "MyPlate-style balance",
+    "brief": "Follow the familiar plate guide: half the items are produce, plus a grain, a protein and a dairy serving.",
+    "goals": [
+      { "metric": "produce_share", "op": ">=", "value": 50, "label": "Half the items are vegetables or fruit" },
+      { "metric": "count_grain", "op": ">=", "value": 1, "label": "A grain serving" },
+      { "metric": "count_protein", "op": ">=", "value": 1, "label": "A protein serving" },
+      { "metric": "count_dairy", "op": ">=", "value": 1, "label": "A dairy serving" },
+      { "metric": "pct_fat", "op": "<=", "value": 35, "label": "Fat at most 35% of calories" }
+    ]
+  }
+]

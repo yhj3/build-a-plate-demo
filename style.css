@@ -1,0 +1,126 @@
+/* Layout: canvas on the left (~70%), panel on the right (~30%). */
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #222;
+  background: #f2f0ea;
+}
+
+#app {
+  display: flex;
+  height: 100vh;
+}
+
+#canvas-wrap {
+  flex: 0 0 70%;
+  position: relative;
+  min-width: 0;
+}
+
+#scene {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Hover tooltip that follows the pointer over the 3D scene. */
+#tooltip {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  color: #fff;
+  background: rgba(34, 34, 34, 0.9);
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+#panel {
+  flex: 0 0 30%;
+  padding: 20px 22px;
+  overflow-y: auto;
+  background: #ffffff;
+  border-left: 1px solid #ddd8cc;
+}
+
+h1 { margin: 0 0 6px; font-size: 1.5rem; }
+h2 { margin: 0 0 8px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #6b6760; }
+section { margin-top: 20px; }
+.hint { margin: 0; font-size: 0.9rem; color: #555; }
+
+/* Scenario chips */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  width: auto;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #333;
+  background: #ece9e0;
+  border-radius: 999px;
+}
+.chip:hover { background: #ddd8cc; }
+.chip.active { background: #3a7d44; color: #fff; }
+.brief { margin: 10px 0 0; font-size: 0.85rem; line-height: 1.45; color: #555; }
+
+#calories { margin: 0; font-size: 1.1rem; font-weight: 600; }
+.note { margin: 4px 0 0; min-height: 1.2em; font-size: 0.85rem; color: #b5542a; }
+
+/* Macro bars */
+.macro {
+  display: grid;
+  grid-template-columns: 60px 1fr 44px;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+.bar { height: 12px; background: #ece9e0; border-radius: 6px; overflow: hidden; }
+.fill { height: 100%; width: 0%; transition: width 0.2s ease; border-radius: 6px; }
+.fill.protein { background: #5a7fd6; }
+.fill.carbs   { background: #d9a441; }
+.fill.fat     { background: #c86a6a; }
+.pct { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* Item list: each row is clickable and removes one of that food. */
+.items { margin: 0; padding-left: 18px; font-size: 0.95rem; line-height: 1.6; }
+.items li { cursor: pointer; }
+.items li:hover { color: #b5542a; text-decoration: line-through; }
+.items .empty { list-style: none; margin-left: -18px; color: #999; cursor: default; }
+.items .empty:hover { color: #999; text-decoration: none; }
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 10px 14px;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: #3a7d44;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+button:hover { background: #2f6837; }
+button.secondary { background: #e4e0d6; color: #333; }
+button.secondary:hover { background: #d6d1c5; }
+
+/* Feedback: scenario goals checklist + coach notes */
+.feedback { margin-top: 12px; min-height: 1.4em; font-size: 0.95rem; line-height: 1.45; }
+.feedback p { margin: 8px 0 0; }
+.score { font-weight: 600; }
+.goals { margin: 4px 0 0; padding: 0; list-style: none; font-size: 0.9rem; line-height: 1.5; }
+.goals li::before { content: "\2713  "; color: #3a7d44; font-weight: 700; }
+.goals li.missed::before { content: "\2717  "; color: #c0392b; }
+.disclaimer { margin: 8px 0 0; font-size: 0.75rem; color: #888; }
+
+/* Narrow viewports: stack the panel below the canvas. */
+@media (max-width: 800px) {
+  #app { flex-direction: column; height: auto; }
+  #canvas-wrap { flex: none; height: 60vh; }
+  #panel { flex: none; border-left: none; border-top: 1px solid #ddd8cc; }
+}
