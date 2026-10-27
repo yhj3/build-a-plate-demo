@@ -1,10 +1,10 @@
 # Build a Plate
 
-[![Tests and deploy](https://github.com/YOUR-GITHUB-USERNAME/YOUR-REPO/actions/workflows/pages.yml/badge.svg)](https://github.com/YOUR-GITHUB-USERNAME/YOUR-REPO/actions/workflows/pages.yml)
+[![Tests and deploy](https://github.com/yhj3/3D_demo/actions/workflows/pages.yml/badge.svg)](https://github.com/yhj3/3D_demo/actions/workflows/pages.yml)
 
 A browser-based 3D nutrition-training activity: click foods onto a plate, watch calories and macros update live, pick a scenario such as *Type 2 diabetes lunch*, and check the plate against its goals.
 
-**[Live demo](https://YOUR-GITHUB-USERNAME.github.io/YOUR-REPO/)** · three.js · plain ES modules · no build step · zero dependencies
+**[Live demo](https://yhj3.github.io/3D_demo/)** · three.js · plain ES modules · no build step · zero dependencies
 
 ![Animated demo: choosing a scenario, adding foods, checking the plate](demo.gif)
 
